@@ -7,6 +7,7 @@ from utils.helper import plot_probability_chart
 from utils.preprocess import process_eye_image 
 from utils.model import load_model, predict, generate_gradcam 
 from utils.database import init_db, save_prediction, get_history
+from utils.ui import apply_modern_sidebar
 
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
@@ -14,7 +15,7 @@ MODELS_DIR = BASE_DIR / "models"
 MODEL_PATH = MODELS_DIR / "model_katarak.pt" 
 
 st.set_page_config(page_title="Deteksi Dini Katarak", page_icon="🎗️", layout="wide")
-
+apply_modern_sidebar()
 st.title("Pengembangan Model Deep Learning untuk Deteksi Dini Katarak pada Citra Digital Mata: Studi Kasus Penanganan Ketidakseimbangan Data dan Generalisasi Real-World")
 st.markdown("Silakan unggah foto fundus atau slit-lamp untuk menganalisis indikasi katarak.")
 st.divider()
