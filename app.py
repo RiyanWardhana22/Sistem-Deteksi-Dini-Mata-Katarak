@@ -47,13 +47,11 @@ with col2:
                 prediksi_utama = list(hasil_prediksi.keys())[0]
                 nilai_utama = list(hasil_prediksi.values())[0]
 
-                # SIMPAN KE DATABASE
                 save_prediction(prediksi_utama, nilai_utama, uploaded_file.name)
                 
                 st.success(f"Analisis Selesai: {prediksi_utama} ({nilai_utama:.1f}%)")
                 plot_probability_chart(hasil_prediksi)
                 
-                # Grad-CAM Section
                 with st.expander("🔍 Lihat Interpretasi Model (Grad-CAM)"):
                     heatmap_img = generate_gradcam(model_ai, st.session_state['tensor_model'], st.session_state['image_for_ui'], device)
                     st.image(heatmap_img, use_container_width=True)
@@ -62,13 +60,10 @@ with col2:
     else:
         st.info("Unggah gambar untuk memulai.")
 
-# 3. AREA RIWAYAT (DI BAGIAN BAWAH)
 st.divider()
-st.subheader("🕒 Riwayat Prediksi Terakhir")
+st.subheader("Riwayat Prediksi Terakhir")
 df_history = get_history()
-
 if not df_history.empty:
-    # Menampilkan tabel dengan gaya yang clean
     st.dataframe(
         df_history, 
         use_container_width=True,

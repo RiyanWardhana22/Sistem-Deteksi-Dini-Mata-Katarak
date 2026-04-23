@@ -3,12 +3,10 @@ import pandas as pd
 from datetime import datetime
 from pathlib import Path
 
-# Setup Path Database secara dinamis
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "history.db"
 
 def init_db():
-    """Membuat tabel riwayat jika belum ada."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
@@ -24,7 +22,8 @@ def init_db():
     conn.close()
 
 def save_prediction(hasil, confidence, image_name):
-    """Menyimpan hasil analisis ke database."""
+    init_db() 
+    
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     tanggal = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -36,8 +35,13 @@ def save_prediction(hasil, confidence, image_name):
     conn.close()
 
 def get_history():
-    """Mengambil semua data riwayat dalam bentuk DataFrame Pandas."""
+    init_db() 
     conn = sqlite3.connect(DB_PATH)
-    df = pd.read_sql_query("SELECT tanggal, hasil_prediksi, confidence FROM history ORDER BY tanggal DESC", conn)
-    conn.close()
+    try:
+        df = pd.read_sql_query("SELECT tanggal, hasil_prediksi, confidence FROM history ORDER BY tanggal DESC", conn)
+    except Exception as e:
+        df = pd.DataFrame(columns=["tanggal", "hasil_prediksi", "confidence"])
+    finally:
+        conn.close()
     return df
+init_db()
