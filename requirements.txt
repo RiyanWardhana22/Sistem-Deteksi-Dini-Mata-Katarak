@@ -1,0 +1,10 @@
+streamlit
+pandas
+matplotlib
+altair
+pillow
+opencv-python-headless
+numpy
+torch
+torchvision
+grad-cam
