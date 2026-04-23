@@ -11,10 +11,20 @@ tab1, tab2, tab3, tab4 = st.tabs(["Katarak", "Diabetic Retinopathy", "Glaukoma",
 
 with tab1:
     st.header("Katarak")
-    st.write("**Deskripsi:** Kekeruhan pada lensa mata yang biasanya jernih. Seperti melihat melalui jendela yang berkabut.")
-    st.write("**Gejala Umum:**")
-    st.markdown("- Pandangan kabur atau redup\n- Sulit melihat di malam hari\n- Sensitif terhadap cahaya dan silau\n- Warna terlihat memudar")
-    st.info("💡 **Pencegahan & Penanganan:** Pemeriksaan mata rutin, melindungi mata dari sinar UV, dan operasi pengangkatan lensa yang keruh jika sudah mengganggu aktivitas.")
+    st.write("**Deskripsi:** Katarak adalah kondisi medis yang ditandai penglihatan kabur akibat lensa mata yang semula jernih menjadi keruh. Lensa mata, yang terletak di belakang iris dan pupil, berfungsi memfokuskan cahaya ke retina agar kamu dapat melihat dengan jelas. Ketika katarak berkembang, lensa mata menjadi semakin keruh, menghalangi cahaya untuk mencapai retina dan menyebabkan gangguan penglihatan.")
+    
+    st.header("Penyebab Katarak")
+    st.write("**Penuaan alami:** Ini adalah penyebab paling umum. Seiring bertambahnya usia, lensa mata secara bertahap menebal dan kehilangan fleksibilitasnya. Akibatnya, protein dalam lensa mulai menggumpal dan menghalangi cahaya yang seharusnya masuk ke retina.")
+    st.write("**Perubahan struktur lensa mata:** Lensa yang sebagian besar terdiri dari air dan protein akan mengalami perubahan seiring waktu. Gumpalan protein ini menghambat cahaya yang masuk ke retina, menyebabkan pandangan menjadi buram dan tidak setajam biasanya.")
+    st.write("**Perubahan warna lensa:** Pada tahap awal, lensa mungkin berubah menjadi kuning atau kecokelatan secara ringan. Namun, perubahan ini akan bertambah parah seiring waktu, sehingga penglihatan makin terganggu.")
+    
+    st.header("Faktor Risiko Katarak")
+    st.write("Terdapat beberapa faktor yang bisa meningkatkan risiko katarak, antara lain:")
+    st.markdown("- Penuaan. Penuaan adalah penyebab tersering dari kekeruhan lensa atau katarak.\n- Riwayat trauma. Lensa mata yang pernah mengalami trauma, seperti masuknya serpihan material tajam ke mata, terbentur bola, kembang api, dapat membuat katarak timbul lebih cepat.\n- Infeksi saat kehamilan. Jika ibu saat hamil mengidap infeksi, khususnya rubella, dapat menjadi penyebab utama terjadinya katarak kongenital pada anak yang dilahirkan. Katarak kongenital dapat terjadi pada salah satu atau kedua mata anak.\n- Mengonsumsi obat-obatan tertentu dalam jangka waktu lama, seperti obat kortikosteroid dan amiodaron, dapat memicu katarak.")
+
+    st.header("Gejala Katarak")
+    st.write("Gejala katarak berkembang secara bertahap dan mungkin tidak terasa pada awalnya. Beberapa gejala umum katarak meliputi:")
+    st.markdown("- Penglihatan kabur atau buram\n- Sensitif terhadap cahaya (silau)\n- Penglihatan ganda\n- Kesulitan melihat di malam hari")
 
 with tab2:
     st.header("Diabetic Retinopathy")
